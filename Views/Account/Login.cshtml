@@ -1,0 +1,22 @@
+﻿@model SomeFacts.ViewModels.LoginViewModel
+@{
+    Layout = "_Layout";
+}
+
+
+<h1>Вход</h1>
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <div asp-validation-summary="All" style="color:red"></div>
+    <div>
+        <label>Никнейм</label>
+        <input asp-for="UserName" />
+    </div>
+    <div>
+        <label>Пароль</label>
+        <input asp-for="Password" />
+    </div>
+    <div>
+        <input type="submit" value="Войти" />
+    </div>
+</form>

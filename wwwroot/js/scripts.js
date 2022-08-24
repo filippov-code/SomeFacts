@@ -6,7 +6,7 @@ function showFact(id, text) {
 
 var facts = [];
 async function loadFacts() {
-    let response = await fetch("/Home/GetFacts?count=50");
+    let response = await fetch("/Facts/GetFacts?count=50");
 
     if (response.ok) {
         facts = await response.json();
@@ -17,7 +17,6 @@ async function loadFacts() {
 
 async function showNextFact() {
     if (facts.length == 0) {
-        //alert("Загрузка фактов");
         await loadFacts();
     }
 

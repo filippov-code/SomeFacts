@@ -1,5 +1,12 @@
-﻿@model string
+﻿@{
+    Layout = "_Layout";
+}
 
-<h1 id="fact-id"></h1>
+
+<h2 id="fact-id"></h2>
 <h2 id="fact-text"></h2>
 <button onclick="showNextFact()">Ещё</button>
+
+<p>
+    <a asp-controller="Admin" asp-action="Index">Админ-панель</a>
+</p>

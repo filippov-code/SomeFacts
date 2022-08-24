@@ -7,9 +7,12 @@
     </head>
 
     <body>
-          <main>
-              @RenderBody()
-          </main>
+        @await Html.PartialAsync("HeaderPartial")
 
+        <main>
+            @RenderBody()
+        </main>
+
+        @await Html.PartialAsync("FooterPartial")
     </body>
 </html>

@@ -1,6 +1,6 @@
 ﻿
 function showFact(id, text) {
-    document.getElementById("fact-id").innerText = id;
+    document.getElementById("fact-id").innerText = "№" + id;
     document.getElementById("fact-text").innerText = text;
 }
 

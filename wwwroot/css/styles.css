@@ -1,1 +1,12 @@
-﻿
+﻿.home-index-background {
+    background-image: url('../images/home-index-background.jpg');
+}
+
+.bg-purple  {
+    background: rgba(140, 104, 205, 0.9);
+}
+
+.unnoticeable-link {
+    color: rgb(140, 104, 205);
+    text-decoration: none;
+}

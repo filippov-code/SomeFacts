@@ -1,19 +1,15 @@
-﻿@model SomeFacts.ViewModels.NewFactViewModel
+﻿
 @{
     Layout = "_Layout";
 }
 
 
 <h2>Панель администратора</h2>
- <a asp-controller="Account" asp-action="Logout">Выйти</a>
+<p>
+    <a asp-controller="Account" asp-action="Logout">Выйти</a>
+</p>
+<p>
+    <a asp-controller="Home" asp-action="Index">На главную</a>
+</p>
 
- <form asp-controller="Admin" asp-action="AddNewFact" method="post">
-     <div asp-validation-summary="All"></div>
-     <div>
-         <label>Факт</label>
-         <input asp-for="Text" />
-     </div>
-     <div>
-         <input type="submit" value="Добавить" />
-     </div>
- </form>
+@await Html.PartialAsync("AddNewFactPartial")

@@ -25,3 +25,11 @@ async function showNextFact() {
 }
 
 showNextFact();
+
+async function deleteFact(id) {
+    var answer = confirm("Подтвердите удаление " + id + "факта");
+    if (answer) {
+        let response = await fetch("/Admin/DeleteFact?id=" + id, { method:"DELETE" });
+        location.reload();
+    }
+}

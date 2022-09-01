@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        @await Html.PartialAsync("CssPartial")
+        @await Html.PartialAsync("ScriptsPartial")
+        @await Html.PartialAsync("HeadPartial")
+    </head>
+
+    <body class="bg-lightpurple">
+        @await Html.PartialAsync("AdminHeaderPartial")
+
+        <main class="container bg-white min-vh-100">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    @RenderBody()
+                </div>
+            </div>
+        </main>
+
+        @await Html.PartialAsync("AdminFooterPartial")
+    </body>
+</html>

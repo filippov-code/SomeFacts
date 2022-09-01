@@ -16,8 +16,12 @@ namespace SomeFacts.Controllers
             this.dbContext = dbContext;
         }
 
-
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult AddNewFact()
         {
             return View();
         }
@@ -27,7 +31,7 @@ namespace SomeFacts.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("Index", model);
+                return View(model);
             }
 
             var newFact = new Fact { Text = model.Text };
@@ -36,7 +40,41 @@ namespace SomeFacts.Controllers
 
             dbContext.SaveChanges();
 
-            return View("Index");
+            return RedirectToAction("AddNewFact", "Admin");
+        }
+
+        public IActionResult AllFacts()
+        {
+            var facts = dbContext.Facts.ToArray().Reverse();
+            return View(facts);
+        }
+
+        [HttpDelete]
+        public async Task DeleteFact(int id)
+        {
+            var fact = new Fact { Id = id };
+            dbContext.Facts.Remove(fact);
+            await dbContext.SaveChangesAsync();
+        }
+
+        public IActionResult EditFact(int id)
+        {
+            var fact = dbContext.Facts.SingleOrDefault(x => x.Id == id);
+            return View(fact);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditFact(Fact fact)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(fact);
+            }
+
+            dbContext.Facts.Update(fact);
+            dbContext.SaveChanges();
+
+            return RedirectToAction("AllFacts", "Admin");
         }
     }
 }

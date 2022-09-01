@@ -2,11 +2,27 @@
     background-image: url('../images/home-index-background.jpg');
 }
 
-.bg-purple  {
+.bg-purple-transparent {
     background: rgba(140, 104, 205, 0.9);
+}
+
+.bg-purple {
+    background: rgba(148, 116, 210);
 }
 
 .unnoticeable-link {
     color: rgb(140, 104, 205);
     text-decoration: none;
+}
+
+a.link-to-text:active, 
+a.link-to-text:hover, 
+a.link-to-text {
+    color: inherit;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.bg-lightpurple {
+    background-color: #E3DDFF;
 }

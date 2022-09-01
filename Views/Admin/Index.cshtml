@@ -1,15 +1,19 @@
 ﻿
 @{
-    Layout = "_Layout";
+    Layout = "_AdminLayout";
 }
 
 
-<h2>Панель администратора</h2>
+<h2 class="pb-2 pt-3">Панель администратора</h2>
 <p>
     <a asp-controller="Account" asp-action="Logout">Выйти</a>
 </p>
 <p>
     <a asp-controller="Home" asp-action="Index">На главную</a>
 </p>
-
-@await Html.PartialAsync("AddNewFactPartial")
+<p>
+    <a asp-controller="Admin" asp-action="AddNewFact">Добавить факт</a>
+</p>
+<p>
+    <a asp-controller="Admin" asp-Action="AllFacts">Посмотреть все факты</a>
+</p>

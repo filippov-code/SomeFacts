@@ -4,19 +4,26 @@
 }
 
 
-<h1>Вход</h1>
-
-<form asp-controller="Account" asp-action="Login" method="post">
-    <div asp-validation-summary="All" style="color:red"></div>
-    <div>
-        <label>Никнейм</label>
-        <input asp-for="UserName" />
+<div class="vh-100 align-items-center d-flex">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-5">
+                <h1>Вход</h1>
+                <form asp-controller="Account" asp-action="Login" method="post">
+                    <div asp-validation-summary="All" style="color:red"></div>
+                    <div class="mb-3">
+                        <label class="form-label">Никнейм</label>
+                        <input asp-for="UserName" class="form-control"/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Пароль</label>
+                        <input asp-for="Password" class="form-control"/>
+                    </div>
+                    <div>
+                        <input class="btn btn-dark" type="submit" value="Войти"/>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div>
-        <label>Пароль</label>
-        <input asp-for="Password" />
-    </div>
-    <div>
-        <input type="submit" value="Войти" />
-    </div>
-</form>
+</div>

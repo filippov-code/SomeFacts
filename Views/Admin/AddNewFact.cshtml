@@ -1,0 +1,19 @@
+﻿@model SomeFacts.ViewModels.NewFactViewModel;
+@{
+    Layout = "_AdminLayout";
+}
+
+
+<h2 class="pb-2 pt-3">Новый факт</h2>
+<form asp-controller="Admin" asp-action="AddNewFact" method="post">
+    <div asp-validation-summary="All" style="color:red"></div>
+        <div class="mb-3">
+            <label class="form-label">Факт</label>
+            <textarea rows="4" class="form-control" asp-for="Text"></textarea>
+        </div>
+        <div>
+            <input class="btn btn-dark" type="submit" value="Добавить" />
+        </div>
+    </div>
+</form>
+            

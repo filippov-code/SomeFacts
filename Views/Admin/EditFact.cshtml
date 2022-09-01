@@ -1,0 +1,14 @@
+﻿@model SomeFacts.Models.Fact
+@{
+    Layout = "_AdminLayout";
+}
+
+<h2 class="pb-2 pt-3">Редактирование факта</h2>
+<form asp-controller="Admin" asp-action="EditFact" method="post">
+    <h2>№@Model.Id</h2>
+    <div asp-validation-summary="All" style="color:red"></div>
+    <label class="form-label mb-3">Факт</label>
+    <input asp-for="Id" hidden value="@Model.Id" />
+    <textarea rows="4" class="form-control mb-3" asp-for="Text"></textarea>
+    <input type="submit" class="btn btn-dark" value="Сохранить"/>
+</form>

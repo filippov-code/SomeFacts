@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SomeFacts.Models.Fact>;
+@{
+    Layout = "_AdminLayout";
+}
+
+<h2 class="pb-2 pt-3">Все факты</h2>
+<div class="container-flex">
+     @foreach(var fact in Model)
+     {
+         <div class="row">
+             <div class="col-1 border border-gray text-center">
+                 @fact.Id
+             </div>
+             <div class="col-9 border border-gray">
+                 @fact.Text
+             </div>
+             <div class="col-1 text-center">
+                 <button class="btn btn-dark" onclick="location.href='/Admin/EditFact?id=@fact.Id'">Редакт.</button>
+             </div>
+             <div class="col-1 text-center">
+                 <button class="btn btn-danger" onclick="deleteFact(@fact.Id)">Удалить</button>
+             </div>
+         </div>
+     }
+ </div>
+</div>

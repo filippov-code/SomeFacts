@@ -24,4 +24,4 @@
 ### Страница редактирования факта
 ![](https://github.com/filippov-code/SomeFacts/blob/master/screenshots/7.png)
 ### Удаление факта
-![](https://github.com/filippov-code/SomeFacts/blob/master/screenshots/8.png)
+![](https://github.com/filippov-code/SomeFacts/blob/master/screenshots/8_delete.png)

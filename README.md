@@ -6,7 +6,7 @@
 **Стек:**
 + С#
 + ASP.NET Core
-+ Entity Framework
++ Entity Framework Core
 + MSSQLServer
 
 ## Скриншоты
